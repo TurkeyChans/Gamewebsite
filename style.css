@@ -1,18 +1,37 @@
 * {
     margin: 0%;
+    overflow-x: hidden;
 }
 .nav {
-    margin-top: 0%;
-    position: -webkit-sticky;
-    display: flex;
-    justify-content: center;
-    margin: 2%;
-}
-.top-buttons {
+    padding: 2%;
+    background-color: rgba(234, 234, 234, 0.843);
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    margin: 0;
     
 }
+.top_buttons button {
+    font-size: larger;
+    background-color: transparent;
+    padding: 15px;
+    border: transparent;
+    border-radius: 20px;
+}
+.top_buttons button:hover {
+  color: aqua;
+}
+.Chicken_Card {
+  margin: 10px;
+  display: block;
+  padding: 10px;
+  border: 5px solid;
+  display: inline-block;
+}
+.chicken_pic {
+  height: 100px;
+}
 .moneyss p {
+  font-size: large;
   display: inline;
-  margin-right: 1px;
-  
 }

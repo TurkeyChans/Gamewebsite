@@ -27,10 +27,28 @@
   padding: 10px;
   border: 5px solid;
   display: inline-block;
+  background-color: transparent;
 }
 .chicken_pic {
   height: 100px;
 }
+.Turkey_Card {
+  margin: 10px;
+  display: block;
+  padding: 10px;
+  border: 5px solid;
+  display: inline-block;
+  background-color: transparent;
+}
+.Pig_Card {
+    margin: 10px;
+  display: block;
+  padding: 10px;
+  border: 5px solid;
+  display: inline-block;
+  background-color: transparent;
+}
+
 .moneyss p {
   font-size: large;
   display: inline;

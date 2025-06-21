@@ -1,31 +1,30 @@
 * {
-    margin: 0%;
-    overflow-x: hidden;
+  margin: 0%;
+  overflow-x: hidden;
 }
 .nav {
-    padding: 2%;
-    background-color: rgba(234, 234, 234, 0.843);
-    width: 100%;
-    height: 70px;
-    text-align: center;
-    margin: 0;
-    
+  padding: 2%;
+  background-color: rgba(234, 234, 234, 0.843);
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  margin: 0;
 }
 .top_buttons button {
-    font-size: larger;
-    background-color: transparent;
-    padding: 15px;
-    border: transparent;
-    border-radius: 20px;
+  font-size: larger;
+  background-color: transparent;
+  padding: 15px;
+  border: transparent;
+  border-radius: 20px;
 }
 .top_buttons button:hover {
   color: aqua;
 }
 .Chicken_Card {
-  margin: 8px;
+  margin: 7px;
   display: block;
-  padding: 8px;
-  border: 5px solid;
+  padding: 7px;
+  border: 4px solid;
   display: inline-block;
   background-color: transparent;
 }
@@ -33,19 +32,19 @@
   height: 100px;
 }
 .Turkey_Card {
-  margin: 8px;
+  margin: 7px;
   display: block;
-  padding: 8px;
-  border: 5px solid;
+  padding: 7px;
+  border: 4px solid;
   display: inline-block;
   background-color: transparent;
 }
 
 .Pig_Card {
-  margin: 8px;
+  margin: 7px;
   display: block;
-  padding: 8px;
-  border: 5px solid;
+  padding: 7px;
+  border: 4px solid;
   display: inline-block;
   background-color: transparent;
 }
@@ -61,17 +60,16 @@
 }
 
 .popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    
-  }
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;  
+}
 
 .popup-content {
   border: solid 3px;
@@ -119,10 +117,10 @@
 }
 
 .Sheep_Card {
-  margin: 8px;
+  margin: 7px;
   display: block;
-  padding: 8px;
-  border: 5px solid;
+  padding: 7px;
+  border: 4px solid;
   display: inline-block;
   background-color: transparent;
 }

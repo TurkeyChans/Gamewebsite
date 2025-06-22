@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div id="popup" class="popup-overlay">
     <div class="popup-content">
       <h4 class="usernamefortt">Name</h4>
@@ -17,19 +16,46 @@
       <button onclick="closePopup()" class="closetutorial">Close Tutorial</button>
     </div>
 </div>
-
+<div id="login_in" class="popup-overlay">
+    <div id="login_in_content" class="popup-content">
+        <form action="" method="get">
+            <label for="login_in_user" class="login_user_label">Username</label>
+            <input id="login_in_user" class="login_user_box" type="text">
+            <label for="login_in_pass" class="login_pass_label">Password</label>
+            <input id="login_in_pass" class="login_pass_box" type="password">
+            <input id="submit_login" class="login_login_label" value="Login" type="submit">
+        </form>
+        <button onclick="closePopuplogin()">Close</button>
+    </div>
+</div>
+<div id="signup" class="popup-overlay">
+    <div id="signup_content" class="popup-content">
+        <form action="" method="get">
+            <label for="Signup_user">Username</label>
+            <input id="Signup_user" type="text">
+            <label for="signup_pass">Password</label>
+            <input id="signup_pass" type="password">
+            <label for="repeat_pass">Repeat Password</label>
+            <input id="repeat_pass" type="password">
+            <input id="submit_signup" value="Sign Up" type="submit">
+        </form>
+        <button onclick="closesignup()">Close</button>
+    </div>
+</div>
     <nav class="nav">
         <div class="top_buttons">
             <button onclick="buy()">Buy</button>
             <button onclick="sell()">Sell</button>
             <button onclick="">Upgrades</button>
-            <button onclick="">Signup/Login</button>
+            <button onclick="opensignup()">Signup</button>
+            <button onclick="openPopuplogin()">Login</button>
         </div>
         <div class="moneyss">
             <p>Money: </p>
             <p id="Money">0</p>
         </div>
     </nav>
+    <div id="cost_sell_main">
         <button class="Chicken_Card">
             <h1>Chicken</h1>
             <img src="pic/chicken_pic.jpg" class="card_pic">
@@ -87,6 +113,7 @@
             <h3>Owned:</h3>
             <h3 id="Cost_Sell_4">Cost: </h3>
         </button>
+    </div>
 </body>
 <script src="prog.js"></script>
 </html>

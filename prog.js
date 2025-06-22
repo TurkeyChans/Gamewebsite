@@ -1,12 +1,26 @@
-window.onload = openPopup;
-window.onload = buy;
-let price = [100,200,300,400]
-let market = [150, 300, 500, 700]
+const price = [100,200,300,400]
+const market = [150, 300, 500, 700]
+const buttons_cards = ["Chicken_Card","Turkey_Card","Pig_Card","Sheep_Card"]
+const names_cards = ["Chicken", "Turkey", "Pig", "Sheep"]
+const img_cards = ["pic/chicken_pic.jpg", "pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/sheep_pic.jpg"]
+const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');
 }
 function closePopup() {
     document.getElementById('popup').classList.remove('show');
+}
+function openPopuplogin() {
+    document.getElementById('login_in').classList.add('show');
+}
+function closePopuplogin() {
+    document.getElementById('login_in').classList.remove('show');
+}
+function opensignup() {
+    document.getElementById('signup').classList.add('show');
+}
+function closesignup() {
+    document.getElementById('signup').classList.remove('show');
 }
 function sell() {
     const saved = localStorage.getItem("SavedHTML");
@@ -18,7 +32,9 @@ function sell() {
 function buy() {
     const saved = localStorage.getItem("SavedHTML");
     document.body.innerHTML = saved;
-
+    for(let j = 1; j <= 4; ++j) {
+        main_point;
+    }
     for(let i = 1; i <= 4; ++i) {
         document.getElementById(`Cost_Sell_${i}`).innerHTML = `Cost: ${price[i-1]}`;
     }

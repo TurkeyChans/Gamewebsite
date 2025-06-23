@@ -10,6 +10,9 @@
   text-align: center;
   margin: 0;
 }
+button:not(:hover) {
+  color: black;
+}
 .top_buttons button {
   font-size: larger;
   background-color: transparent;

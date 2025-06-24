@@ -1,8 +1,7 @@
 const price = [100,200,300,400]
 const market = [150, 300, 500, 700]
-const buttons_cards = ["Chicken_Card","Turkey_Card","Pig_Card","Sheep_Card"]
-const names_cards = ["Chicken", "Turkey", "Pig", "Sheep"]
-const img_cards = ["pic/chicken_pic.jpg", "pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/sheep_pic.jpg"]
+const names_cards = ["Rabbit", "Guinea Pig", "Chicken", "Turkey", "Pig", "Goat", "Sheep", "Horse"]
+const img_cards = ["pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/horse_pic.jpg"]
 const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');
@@ -44,7 +43,7 @@ function buy() {
 function starter() {
     for (let i = 0; i < names_cards.length; i++) {
         const button = document.createElement("button");
-        button.className = buttons_cards[i];
+        button.className = "Box_Card";
 
         const title = document.createElement("h1");
         title.textContent = names_cards[i];

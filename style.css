@@ -10,9 +10,6 @@
   text-align: center;
   margin: 0;
 }
-button:not(:hover) {
-  color: black;
-}
 .top_buttons button {
   font-size: larger;
   background-color: transparent;
@@ -118,10 +115,35 @@ button:not(:hover) {
   display: inline-block;
   background-color: transparent;
 }
-.login_user_label {
-  display: inline-block;
-  
+
+.signup_row {
+  display: flex;
+  flex-direction: column; 
+  margin: 5%;
+  border: solid 2px;
+  background-color: rgb(229, 229, 229);
 }
-.login_user_box {
-  display: inline-block;
+.submit_signs {
+  padding: 5px;
+  margin: 5%;
+  border: solid 2px;
+  background-color: rgb(229, 229, 229);
+}
+.close_button {
+  padding: 5px;
+  border: solid 2px;
+  background-color: rgb(229, 229, 229);
+}
+.login_in_row {
+  display: flex;
+  flex-direction: column; 
+  margin: 5%;
+  border: solid 2px;
+  background-color: rgb(229, 229, 229);
+}
+.login_login_label {
+  padding: 5px;
+  margin: 5%;
+  border: solid 2px;
+  background-color: rgb(229, 229, 229);
 }

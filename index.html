@@ -19,34 +19,44 @@
 <div id="login_in" class="popup-overlay">
     <div id="login_in_content" class="popup-content">
         <form action="" method="get">
-            <label for="login_in_user" class="login_user_label">Username</label>
-            <input id="login_in_user" class="login_user_box" type="text">
-            <label for="login_in_pass" class="login_pass_label">Password</label>
-            <input id="login_in_pass" class="login_pass_box" type="password">
+            <div class="login_in_row">
+                <label for="login_in_user" class="login_user_label">Username</label>
+                <input id="login_in_user" class="login_user_box" type="text">
+            </div>
+            <div class="login_in_row">
+                <label for="login_in_pass" class="login_pass_label">Password</label>
+                <input id="login_in_pass" class="login_pass_box" type="password">
+            </div>
             <input id="submit_login" class="login_login_label" value="Login" type="submit">
         </form>
-        <button onclick="closePopuplogin()">Close</button>
+        <button onclick="closePopuplogin()" class="close_button">Close</button>
     </div>
 </div>
 <div id="signup" class="popup-overlay">
     <div id="signup_content" class="popup-content">
         <form action="" method="get">
-            <label for="Signup_user">Username</label>
-            <input id="Signup_user" type="text">
-            <label for="signup_pass">Password</label>
-            <input id="signup_pass" type="password">
-            <label for="repeat_pass">Repeat Password</label>
-            <input id="repeat_pass" type="password">
-            <input id="submit_signup" value="Sign Up" type="submit">
+            <div class="signup_row">
+                <label for="Signup_user">Username</label>
+                <input id="Signup_user" type="text" class="signup_user_class">
+            </div>
+            <div class="signup_row">
+                <label for="signup_pass">Password</label>
+                <input id="signup_pass" type="password">
+            </div>
+            <div class="signup_row">
+                <label for="repeat_pass">Repeat Password</label>
+                <input id="repeat_pass" type="password">
+            </div>
+            <input id="submit_signup" value="Sign Up" type="submit" class="submit_signs">
         </form>
-        <button onclick="closesignup()">Close</button>
+        <button onclick="closesignup()" class="close_button">Close</button>
     </div>
 </div>
     <nav class="nav">
         <div class="top_buttons">
             <button onclick="buy()">Buy</button>
             <button onclick="sell()">Sell</button>
-            <button onclick="">Upgrades</button>
+            <button onclick="upgrades()">Upgrades</button>
             <button onclick="opensignup()">Signup</button>
             <button onclick="openPopuplogin()">Login</button>
         </div>

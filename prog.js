@@ -29,6 +29,11 @@ function sell() {
         document.getElementById(`Cost_Sell_${i}`).innerHTML = `Sell: ${market[i-1]}`;
     }
 }
+function upgrades() {
+    remove_buy_sell()
+    const ss = document.createElement("h1");
+    ss.textContent = "Coming soon";
+}
 function buy() {
     remove_buy_sell()
     starter()

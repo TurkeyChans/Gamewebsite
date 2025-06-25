@@ -1,7 +1,7 @@
 const price = [100,200,300,400]
 const market = [150, 300, 500, 700]
-const names_cards = ["Rabbit", "Guinea Pig", "Chicken", "Turkey", "Pig", "Goat", "Sheep", "Horse"]
-const img_cards = ["pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/horse_pic.jpg"]
+const names_cards = ["Rabbit", "Guinea Pig", "Chicken", "Duck", "Turkey", "Pig", "Goat", "Sheep","Donkey", "Horse", "Tiger", "Lion"]
+const img_cards = ["pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/Duck_pic.jpg","pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/donkey_pic.jpg","pic/horse_pic.jpg","pic/tiger_pic.jpg","pic/lion_pic.jpg"]
 const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');
@@ -17,14 +17,17 @@ function closePopuplogin() {
 }
 function opensignup() {
     document.getElementById('signup').classList.add('show');
+    document.addEventListener("keydown", signup_pass);
+
 }
 function closesignup() {
     document.getElementById('signup').classList.remove('show');
+    document.removeEventListener("keydown", signup_pass);
 }
 function sell() {
     remove_buy_sell()
     starter()
-    for(let i = 1; i <= 4; ++i) {
+    for(let i = 1; i <= names_cards.length; ++i) {
         document.getElementById(`Cost_Sell_${i}`).innerHTML = `Sell: ${market[i-1]}`;
     }
 }
@@ -36,9 +39,6 @@ function upgrades() {
 function buy() {
     remove_buy_sell()
     starter()
-    for(let i = 1; i <= 4; ++i) {
-        document.getElementById(`Cost_Sell_${i}`).innerHTML = `Cost: ${price[i-1]}`;
-    }
 }
 function starter() {
     for (let i = 0; i < names_cards.length; i++) {
@@ -71,3 +71,13 @@ function remove_buy_sell() {
     }
 }
 starter()
+
+function signup_pass(e) {
+    let pass = document.getElementById("signup_pass");
+        let rpass = document.getElementById("repeat_pass");
+        let spass = pass.value;
+        let rspass = rpass.value;
+        if(spass != rspass) {
+            console.log(e);
+        }
+}

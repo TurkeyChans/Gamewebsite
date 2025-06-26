@@ -1,7 +1,7 @@
 const price = [100,200,300,400]
 const market = [150, 300, 500, 700]
 const names_cards = ["Rabbit", "Guinea Pig", "Chicken", "Duck", "Turkey", "Pig", "Goat", "Sheep","Donkey", "Horse", "Tiger", "Lion"]
-const img_cards = ["pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/duck_pic.jpg","pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/donkey_pic.jpg","pic/horse_pic.jpg","pic/tiger_pic.jpg","pic/lion_pic.jpg"]
+const img_cards = ["pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/ducks_pic.jpg","pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/donkey_pic.jpg","pic/horse_pic.jpg","pic/tiger_pic.jpg","pic/lion_pic.jpg"]
 const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');

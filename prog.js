@@ -1,7 +1,7 @@
 const price = [100,200,300,400]
-const market = [150, 300, 500, 700]
-const names_cards = ["Rabbit", "Guinea Pig", "Chicken", "Duck", "Turkey", "Pig", "Goat", "Sheep","Donkey", "Horse", "Tiger", "Lion"]
-const img_cards = ["pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/ducks_pic.jpg","pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/donkey_pic.jpg","pic/horse_pic.jpg","pic/tiger_pic.jpg","pic/lion_pic.jpg"]
+const market = [100,200,300,400]
+const names_cards = ["Frog","Hamster","Ferret","Lizard","Rabbit", "Guinea Pig", "Chicken", "Duck", "Turkey", "Pig", "Goat", "Sheep","Donkey", "Horse", "Tiger", "Lion"]
+const img_cards = ["pic/frog_pic.jpg","pic/hamster_pic.jpg","pic/ferret_pic.jpg","pic/lizard_pic.jpg","pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/ducks_pic.jpg","pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/donkey_pic.jpg","pic/horse_pic.jpg","pic/tiger_pic.jpg","pic/lion_pic.jpg"]
 const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');
@@ -44,8 +44,9 @@ function sell() {
 }
 function upgrades() {
     remove_buy_sell()
-    const ss = document.createElement("h1");
-    ss.textContent = "Coming soon";
+    const owned = document.createElement("div");
+    owned.innerHTML = `<h3>Coming Soon</h3>`;
+    main_point.appendChild(owned);
 }
 function buy() {
     remove_buy_sell()
@@ -75,6 +76,7 @@ function starter() {
         main_point.appendChild(button);
     }
 }
+
 function remove_buy_sell() {
     const container = document.getElementById("cost_sell_main");
     while (container.firstChild) {
@@ -83,8 +85,18 @@ function remove_buy_sell() {
 }
 starter()
 
-
-
+function timeout() {
+    const Oprices = [100,200,300,400]
+    const s = Math.random() * 2000;
+    for(let j = 0; j < Oprices.length; ++j) {
+        market[j] = Oprices[j] * Math.floor(1 + Math.random() * 3)
+    }
+    setTimeout(hello, s);
+    function hello() {
+        timeout();
+    }
+}
+timeout()
 function signup_pass() {
     let pass = document.getElementById("signup_pass");
     let rpass = document.getElementById("repeat_pass");
@@ -96,7 +108,8 @@ function signup_pass() {
 
     if (spass === rspass && spass.length > 0 && rspass.length > 0 && user.length > 0) {
         document.getElementById('submit_signup').disabled = false;
-    } else {
+    } 
+    else {
         document.getElementById('submit_signup').disabled = true;
     }
 }
@@ -109,7 +122,8 @@ function login_pass() {
     
     if (lpass.length > 0 && users.length > 0) {
         document.getElementById('submit_login').disabled = false;
-    } else {
+    } 
+    else {
         document.getElementById('submit_login').disabled = true;
     }
 }

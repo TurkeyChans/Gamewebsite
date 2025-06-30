@@ -1,7 +1,42 @@
 const price = [100,200,300,400]
-const market = [100,200,300,400]
-const names_cards = ["Frog","Hamster","Ferret","Lizard","Rabbit", "Guinea Pig", "Chicken", "Duck", "Turkey", "Pig", "Goat", "Sheep","Donkey", "Horse", "Tiger", "Lion"]
-const img_cards = ["pic/frog_pic.jpg","pic/hamster_pic.jpg","pic/ferret_pic.jpg","pic/lizard_pic.jpg","pic/rabbit_pic.jpg", "pic/guinea_pig_pic.jpg", "pic/chicken_pic.jpg", "pic/ducks_pic.jpg","pic/turkey_pic.jpg", "pic/pig_pic.jpg", "pic/goat_pic.jpg", "pic/sheep_pic.jpg", "pic/donkey_pic.jpg","pic/horse_pic.jpg","pic/tiger_pic.jpg","pic/lion_pic.jpg"]
+const stored = localStorage.getItem("market");
+let market;
+
+if (stored) {
+    market = JSON.parse(stored).market;
+} 
+else {
+    market = [100, 200, 300, 400];
+}
+
+const names_cards = ["Fish","Parrot","Frog","Hamster","Ferret","Lizard","Snake","Rabbit","Guinea Pig","Chicken","Duck","Octopus","Turkey", "Pig", "Goat","Turtle","Sheep","Donkey","Cow","Ostrich","Horse","Panda","Kangaroo","Tiger","Lion","Giraffe"]
+const img_cards = ["pic/fish_pic.jpg",
+    "pic/parrot_pic.jpg",
+    "pic/frog_pic.jpg",
+    "pic/hamster_pic.jpg",
+    "pic/ferret_pic.jpg",
+    "pic/lizard_pic.jpg",
+    "pic/snake_pic.jpg",
+    "pic/rabbit_pic.jpg", 
+    "pic/guinea_pig_pic.jpg",
+    "pic/chicken_pic.jpg",
+    "pic/ducks_pic.jpg",
+    "pic/octopus_pic.jpg",
+    "pic/turkey_pic.jpg",
+    "pic/pig_pic.jpg",
+    "pic/goat_pic.jpg",
+    "pic/turtle_pic.jpg",
+    "pic/sheep_pic.jpg",
+    "pic/donkey_pic.jpg",
+    "pic/cow_pic.jpg",
+    "pic/ostrich_pic.jpg",
+    "pic/horse_pic.jpg", 
+    "pic/panda_pic.jpg",
+    "pic/kangaroo_pic.jpg",
+    "pic/tiger_pic.jpg",
+    "pic/lion_pic.jpg",
+    "pic/giraffe_pic.jpg"
+]
 const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');
@@ -83,20 +118,25 @@ function remove_buy_sell() {
         container.removeChild(container.firstChild);
     }
 }
+timeout()
 starter()
 
 function timeout() {
     const Oprices = [100,200,300,400]
-    const s = Math.random() * 2000;
-    for(let j = 0; j < Oprices.length; ++j) {
-        market[j] = Oprices[j] * Math.floor(1 + Math.random() * 3)
-    }
-    setTimeout(hello, s);
-    function hello() {
+    const s = Math.floor(Math.random() * 10000);
+    //2 mins = 120000
+    setTimeout(changeprice, s);
+    function changeprice() {
+        for(let j = 0; j < Oprices.length; ++j) {
+            market[j] = Oprices[j] * Math.floor(1 + Math.random() * 3)
+        }
+        const jsons = JSON.stringify({ market });
+        localStorage.setItem("market", jsons);
         timeout();
     }
+    
 }
-timeout()
+
 function signup_pass() {
     let pass = document.getElementById("signup_pass");
     let rpass = document.getElementById("repeat_pass");

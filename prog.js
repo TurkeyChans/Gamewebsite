@@ -87,14 +87,27 @@ function buy() {
     remove_buy_sell()
     starter()
 }
+
+function addCardClickListeners() {
+    const cards = document.querySelectorAll('.Box_Card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            console.log("ID:", card.id);
+        });
+    });
+
+}
+
+
 function starter() {
     for (let i = 0; i < names_cards.length; i++) {
-        const button = document.createElement("button");
-        button.className = "Box_Card";
+        const card = document.createElement("div");
+        card.className = "Box_Card";
+        card.dataset.id = i;
 
         const title = document.createElement("h1");
         title.textContent = names_cards[i];
-
+        title.className = "title";
         const img = document.createElement("img");
         img.src = img_cards[i];
         img.className = "card_pic";
@@ -102,13 +115,14 @@ function starter() {
         const owned = document.createElement("div");
         owned.className = "Owneds_Card";
         owned.innerHTML = `<h3>Owned:</h3><h3 id="Owned_${i + 1}">0</h3>`;
-
+        
         const cost = document.createElement("h3");
         cost.id = `Cost_Sell_${i+1}`;
+        cost.className = "cost_sell_tags";
         cost.textContent = `Cost: ${price[i]}`;
-
-        button.append(title, img, owned, cost);
-        main_point.appendChild(button);
+        card.id = `button_${i+1}`;
+        card.append(title, img, owned, cost);
+        main_point.appendChild(card);
     }
 }
 
@@ -169,3 +183,4 @@ function login_pass() {
 }
 
 
+addCardClickListeners();

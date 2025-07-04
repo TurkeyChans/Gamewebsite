@@ -12,7 +12,7 @@
   margin: 0;
 }
 .top_buttons button {
-  font-size: larger;
+  font-size: xx-large;
   background-color: transparent;
   padding: 10px;
   border: transparent;
@@ -20,7 +20,8 @@
   cursor: pointer;
 }
 .top_buttons button:hover {
-  color: aqua;
+  color: #87ceeb;
+  transition: 0.4s ease;
 }
 .title, .cost_sell_tags {
   display: flex;
@@ -39,6 +40,7 @@
   cursor: pointer;
   box-shadow: 2px 2px 2px black;
 }
+
 .card_pic {
   height: 100px;
   border-radius: 50px;
@@ -135,4 +137,33 @@
   margin: 5%;
   border: solid 2px;
   background-color: rgb(229, 229, 229);
+}
+.button_menu_phone {
+  padding: 100px;
+  border: transparent;
+}
+.phones, .phones1, .phones2 {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+.phoness {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transform: rotate(45deg) translate(3px, 5px);
+
+}
+.phoness1 {
+    display: none;
+}
+
+.phoness2 {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transform: rotate(-45deg) translate(1px, -5px);
 }

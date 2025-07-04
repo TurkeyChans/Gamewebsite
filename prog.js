@@ -1,5 +1,6 @@
 const price = [100,200,300,400]
 const stored = localStorage.getItem("market");
+let flipswitchsell = false;
 let market;
 
 if (stored) {
@@ -77,15 +78,18 @@ function closesignup() {
 function sell() {
     remove_buy_sell()
     starter()
+    flipswitchsell = true;
     for(let i = 1; i <= names_cards.length; ++i) {
         document.getElementById(`Cost_Sell_${i}`).innerHTML = `Sell: ${market[i-1]}`;
     }
+    
 }
 function upgrades() {
     remove_buy_sell()
     upgradeslist()
 }
 function upgradeslist(){
+    flipswitchsell = false;
     for (let i = 0; i < upgrades_name.length; i++) {
         const card = document.createElement("div");
         card.className = "Box_Card";
@@ -108,10 +112,12 @@ function upgradeslist(){
         card.append(title, img, owned, cost);
         main_point.appendChild(card);
     }
+
 }
 function buy() {
     remove_buy_sell()
     starter()
+    flipswitchsell = false;
 }
 
 function addCardClickListeners() {
@@ -141,7 +147,7 @@ function starter() {
         const owned = document.createElement("div");
         owned.className = "Owneds_Card";
         owned.innerHTML = `<h3>Owned:</h3><h3 id="Owned_${i + 1}">0</h3>`;
-        
+
         const cost = document.createElement("h3");
         cost.id = `Cost_Sell_${i+1}`;
         cost.className = "cost_sell_tags";
@@ -173,6 +179,10 @@ function timeout() {
         const jsons = JSON.stringify({ market });
         localStorage.setItem("market", jsons);
         timeout();
+        if(flipswitchsell){
+            remove_buy_sell()
+            sell()
+        }
     }
     
 }

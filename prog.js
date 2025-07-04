@@ -8,6 +8,9 @@ if (stored) {
 else {
     market = [100, 200, 300, 400];
 }
+const upgrades_name = ["Timer"]
+const upgrades_price = ["100"]
+const upgrades_img = ["pic/timer_icon.png"]
 
 const names_cards = ["Fish","Parrot","Frog","Hamster","Ferret","Lizard","Snake","Rabbit","Guinea Pig","Chicken","Duck","Octopus","Turkey", "Pig", "Goat","Turtle","Sheep","Donkey","Cow","Ostrich","Horse","Panda","Kangaroo","Tiger","Lion","Giraffe"]
 const img_cards = ["pic/fish_pic.jpg",
@@ -37,6 +40,7 @@ const img_cards = ["pic/fish_pic.jpg",
     "pic/lion_pic.jpg",
     "pic/giraffe_pic.jpg"
 ]
+
 const main_point = document.getElementById("cost_sell_main");
 function openPopup() {
     document.getElementById('popup').classList.add('show');
@@ -79,9 +83,31 @@ function sell() {
 }
 function upgrades() {
     remove_buy_sell()
-    const owned = document.createElement("div");
-    owned.innerHTML = `<h3>Coming Soon</h3>`;
-    main_point.appendChild(owned);
+    upgradeslist()
+}
+function upgradeslist(){
+    for (let i = 0; i < upgrades_name.length; i++) {
+        const card = document.createElement("div");
+        card.className = "Box_Card";
+        card.dataset.id = i;
+
+        const title = document.createElement("h1");
+        title.textContent = upgrades_name[i];
+        title.className = "title";
+        const img = document.createElement("img");
+        img.src = upgrades_img[i];
+        img.className = "card_pic";
+
+        const owned = document.createElement("div");
+
+        const cost = document.createElement("h3");
+        cost.id = `Cost_Sell_${i+1}`;
+        cost.className = "cost_sell_tags";
+        cost.textContent = `Cost: ${upgrades_price[i]}`;
+        card.id = `button_${i+1}`;
+        card.append(title, img, owned, cost);
+        main_point.appendChild(card);
+    }
 }
 function buy() {
     remove_buy_sell()
@@ -181,6 +207,5 @@ function login_pass() {
         document.getElementById('submit_login').disabled = true;
     }
 }
-
 
 addCardClickListeners();

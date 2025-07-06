@@ -13,7 +13,7 @@ const upgrades_name = ["Timer"]
 const upgrades_price = ["100"]
 const upgrades_img = ["pic/timer_icon.png"]
 
-const names_cards = ["Fish","Parrot","Frog","Hamster","Ferret","Lizard","Snake","Rabbit","Guinea Pig","Chicken","Duck","Octopus","Turkey", "Pig", "Goat","Turtle","Sheep","Donkey","Cow","Ostrich","Horse","Panda","Kangaroo","Tiger","Lion","Giraffe"]
+const names_cards = ["Fish","Parrot","Frog","Hamster","Ferret","Lizard","Snake","Rabbit","Guinea Pig","Beaver","Chicken","Duck","Octopus","Sloth","Turkey", "Pig", "Goat","Turtle","Koala","Fox","Sheep","Seal","Donkey","Cow","Ostrich","Horse","Panda","Kangaroo","Tiger","Lion","Black Bear","Brown Bear","Polar Bear","Giraffe"]
 const img_cards = ["pic/fish_pic.jpg",
     "pic/parrot_pic.jpg",
     "pic/frog_pic.jpg",
@@ -23,14 +23,19 @@ const img_cards = ["pic/fish_pic.jpg",
     "pic/snake_pic.jpg",
     "pic/rabbit_pic.jpg", 
     "pic/guinea_pig_pic.jpg",
+    "pic/beaver_pic.jpg",
     "pic/chicken_pic.jpg",
     "pic/ducks_pic.jpg",
     "pic/octopus_pic.jpg",
+    "pic/sloth_pic.jpg",
     "pic/turkey_pic.jpg",
     "pic/pig_pic.jpg",
     "pic/goat_pic.jpg",
     "pic/turtle_pic.jpg",
+    "pic/koala_pic.jpg",
+    "pic/fox_pic.jpg",
     "pic/sheep_pic.jpg",
+    "pic/seal_pic.jpg",
     "pic/donkey_pic.jpg",
     "pic/cow_pic.jpg",
     "pic/ostrich_pic.jpg",
@@ -39,6 +44,9 @@ const img_cards = ["pic/fish_pic.jpg",
     "pic/kangaroo_pic.jpg",
     "pic/tiger_pic.jpg",
     "pic/lion_pic.jpg",
+    "pic/black_bear_pic.jpg",
+    "pic/brown_bear_pic.jpg",
+    "pic/polar_bear_pic.jpg",
     "pic/giraffe_pic.jpg"
 ]
 
@@ -82,7 +90,6 @@ function sell() {
     for(let i = 1; i <= names_cards.length; ++i) {
         document.getElementById(`Cost_Sell_${i}`).innerHTML = `Sell: ${market[i-1]}`;
     }
-    
 }
 function upgrades() {
     remove_buy_sell()

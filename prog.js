@@ -160,6 +160,8 @@ function sellings(own) {
     if(owned[own - 1] > 0) {
         owned[own - 1]--;
         owneds.textContent = owned[own - 1];
+        money += market[own-1];
+        document.getElementById("Money").innerText = money;
     }
 }
 function owns(own) {

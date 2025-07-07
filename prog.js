@@ -5,7 +5,8 @@ let market;
 let buying = true;
 let selling = false;
 let owned = [0,0,0,0]
-let money = 0;
+let money = 100;
+document.getElementById("Money").innerText = money;
 if (stored) {
     market = JSON.parse(stored).market;
 } 
@@ -145,7 +146,7 @@ function addCardClickListeners() {
             console.log("ID:", card.id);
             let cards_id = card.id;
             let own = parseInt(cards_id.replace("button_", ""));
-            if (moneychecker() && buying) {
+            if (buying) {
                 owns(own);
             }
 
@@ -165,15 +166,18 @@ function sellings(own) {
     }
 }
 function owns(own) {
-    const owneds = document.getElementById(`Owned_${own}`);
-    owned[own - 1]++;
-    owneds.textContent = owned[own - 1];
+    console.log(money);
+    if(money >= price[own-1]) {
+        console.log(price[own-1]);
+        money -= price[own-1];
+        const owneds = document.getElementById(`Owned_${own}`);
+        owned[own - 1]++;
+        owneds.textContent = owned[own - 1];
+        document.getElementById("Money").innerText = money;
+    }
 }
 
 
-function moneychecker() {
-    return true; //fix later
-}
 
 function starter() {
     for (let i = 0; i < names_cards.length; i++) {

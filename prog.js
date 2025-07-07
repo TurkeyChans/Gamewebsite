@@ -2,7 +2,10 @@ const price = [100,200,300,400]
 const stored = localStorage.getItem("market");
 let flipswitchsell = false;
 let market;
-
+let buying = true;
+let selling = false;
+let owned = [0,0,0,0]
+let money = 0;
 if (stored) {
     market = JSON.parse(stored).market;
 } 
@@ -10,10 +13,10 @@ else {
     market = [100, 200, 300, 400];
 }
 const upgrades_name = ["Timer"]
-const upgrades_price = ["100"]
+const upgrades_price = [100]
 const upgrades_img = ["pic/timer_icon.png"]
 
-const names_cards = ["Fish","Parrot","Frog","Hamster","Ferret","Lizard","Snake","Rabbit","Guinea Pig","Beaver","Chicken","Duck","Octopus","Sloth","Turkey", "Pig", "Goat","Turtle","Koala","Fox","Sheep","Seal","Donkey","Cow","Ostrich","Horse","Panda","Kangaroo","Tiger","Lion","Black Bear","Brown Bear","Polar Bear","Giraffe"]
+const names_cards = ["Fish","Parrot","Frog","Hamster","Ferret","Lizard","Snake","Rabbit","Guinea Pig","Beaver","Capybara","Chicken","Duck","Mole","Octopus","Sloth","Turkey", "Pig", "Goat","Turtle","Koala","Fox","Sheep","Seal","Donkey","Cow","Yak","Ostrich","Horse","Panda","Kangaroo","Tiger","Lion","Black Bear","Brown Bear","Polar Bear","Giraffe"]
 const img_cards = ["pic/fish_pic.jpg",
     "pic/parrot_pic.jpg",
     "pic/frog_pic.jpg",
@@ -24,8 +27,10 @@ const img_cards = ["pic/fish_pic.jpg",
     "pic/rabbit_pic.jpg", 
     "pic/guinea_pig_pic.jpg",
     "pic/beaver_pic.jpg",
+    "pic/capybara_pic.jpg",
     "pic/chicken_pic.jpg",
     "pic/ducks_pic.jpg",
+    "pic/mole_pic.jpg",
     "pic/octopus_pic.jpg",
     "pic/sloth_pic.jpg",
     "pic/turkey_pic.jpg",
@@ -38,6 +43,7 @@ const img_cards = ["pic/fish_pic.jpg",
     "pic/seal_pic.jpg",
     "pic/donkey_pic.jpg",
     "pic/cow_pic.jpg",
+    "pic/yak_pic.jpg",
     "pic/ostrich_pic.jpg",
     "pic/horse_pic.jpg", 
     "pic/panda_pic.jpg",
@@ -90,6 +96,9 @@ function sell() {
     for(let i = 1; i <= names_cards.length; ++i) {
         document.getElementById(`Cost_Sell_${i}`).innerHTML = `Sell: ${market[i-1]}`;
     }
+    selling = true;
+    buying = false;
+
 }
 function upgrades() {
     remove_buy_sell()
@@ -125,6 +134,8 @@ function buy() {
     remove_buy_sell()
     starter()
     flipswitchsell = false;
+    selling = false;
+    buying = true;
 }
 
 function addCardClickListeners() {
@@ -132,11 +143,35 @@ function addCardClickListeners() {
     cards.forEach(card => {
         card.addEventListener('click', () => {
             console.log("ID:", card.id);
+            let cards_id = card.id;
+            let own = parseInt(cards_id.replace("button_", ""));
+            if (moneychecker() && buying) {
+                owns(own);
+            }
+
+            if (selling) {
+                sellings(own)
+            }
         });
     });
-
+}
+function sellings(own) {
+    const owneds = document.getElementById(`Owned_${own}`);
+    if(owned[own - 1] > 0) {
+        owned[own - 1]--;
+        owneds.textContent = owned[own - 1];
+    }
+}
+function owns(own) {
+    const owneds = document.getElementById(`Owned_${own}`);
+    owned[own - 1]++;
+    owneds.textContent = owned[own - 1];
 }
 
+
+function moneychecker() {
+    return true; //fix later
+}
 
 function starter() {
     for (let i = 0; i < names_cards.length; i++) {
@@ -153,7 +188,7 @@ function starter() {
 
         const owned = document.createElement("div");
         owned.className = "Owneds_Card";
-        owned.innerHTML = `<h3>Owned:</h3><h3 id="Owned_${i + 1}">0</h3>`;
+        owned.innerHTML = `<h3>Owned:</h3><h3 id="Owned_${i + 1}"></h3>`;
 
         const cost = document.createElement("h3");
         cost.id = `Cost_Sell_${i+1}`;
@@ -163,6 +198,8 @@ function starter() {
         card.append(title, img, owned, cost);
         main_point.appendChild(card);
     }
+    finallystartup()
+    addCardClickListeners()
 }
 
 function remove_buy_sell() {
@@ -224,5 +261,10 @@ function login_pass() {
         document.getElementById('submit_login').disabled = true;
     }
 }
-
-addCardClickListeners();
+function finallystartup() {
+    let i = 0;
+    for(i = 0; i < owned.length; ++i) {
+        let ownedss = document.getElementById(`Owned_${i+1}`);
+        ownedss.textContent = owned[i];
+    }
+}

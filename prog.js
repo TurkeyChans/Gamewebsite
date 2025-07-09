@@ -107,6 +107,8 @@ function upgrades() {
 }
 function upgradeslist(){
     flipswitchsell = false;
+    selling = false;
+    buying = false;
     for (let i = 0; i < upgrades_name.length; i++) {
         const card = document.createElement("div");
         card.className = "Box_Card";
@@ -129,7 +131,7 @@ function upgradeslist(){
         card.append(title, img, owned, cost);
         main_point.appendChild(card);
     }
-
+    
 }
 function buy() {
     remove_buy_sell()
